@@ -1,0 +1,24 @@
+# ROS2
+build/
+install/
+log/
+.colcon/
+.ament/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+
+# C++
+cmake-build-debug/
+.idea/
+.vscode/
+*.swp
+*~
