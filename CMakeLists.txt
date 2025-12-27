@@ -11,6 +11,7 @@ install(DIRECTORY
   meshes
   rviz
   urdf
+  mujoco
   DESTINATION share/${PROJECT_NAME}
 )
 
