@@ -15,7 +15,7 @@
             <geom size="0.001" contype="0" conaffinity="0" density="0"/>
           </default>
           <default class="foot2">
-            <geom size="0.001"/>
+            <geom size="0.02 0.03 0.015" type="box" pos="0 0 -0.015" mass="0.05" friction="1.5" solref="0.005 1" solimp="0.8 0.9 0.001"/>
           </default>
         </default>
       </default>
@@ -80,16 +80,14 @@
                 <inertial pos="0.012435 0 -0.015511" quat="0.48854 0.511203 0.511203 0.48854" mass="0.030265" diaginertia="2.5e-05 2.40454e-05 1.95464e-06"/>
                 <joint name="leg_l5_joint" pos="0 0 0" axis="0 -1 0" range="-1.1 1.1" frictionloss="0.2"/>
                 <geom class="visual" mesh="leg_l5_link"/>
-                <geom class="collision" size="0.05005 0.01725 0.00875" pos="0.01503 0 -0.0102" quat="0.707388 0.706825 0 0" type="box" />
-                <body name="leg_l_f1_link" pos="0.06 0 -0.007">
-                  <inertial pos="0 0 0" mass="0.01" diaginertia="1e-06 1e-06 1e-06"/>
-                  <geom class="foot1"/>
+                <!-- <geom class="collision" size="0.05005 0.01725 0.00875" pos="0.01503 0 -0.0102" quat="0.707388 0.706825 0 0" type="box" /> -->
+                <body name="leg_l_f1_link" pos="0.06 0 -0.005">
+                  <inertial pos="0 0 0" mass="0.05" diaginertia="1e-05 1e-05 1e-05"/>
                   <geom class="foot2"/>
                   <site name="leg_l_f1_site" pos="0 0 0"/>
                 </body>
-                <body name="leg_l_f2_link" pos="-0.03 0 -0.007">
-                  <inertial pos="0 0 0" mass="0.01" diaginertia="1e-06 1e-06 1e-06"/>
-                  <geom class="foot1"/>
+                <body name="leg_l_f2_link" pos="-0.03 0 -0.005">
+                  <inertial pos="0 0 0" mass="0.05" diaginertia="1e-05 1e-05 1e-05"/>
                   <geom class="foot2"/>
                   <site name="leg_l_f2_site" pos="0 0 0"/>
                 </body>
@@ -123,16 +121,14 @@
                 <inertial pos="0.012435 -0.0005 -0.015511" quat="0.48854 0.511203 0.511203 0.48854" mass="0.030265" diaginertia="2.5e-05 2.40454e-05 1.95464e-06"/>
                 <joint name="leg_r5_joint" pos="0 0 0" axis="0 1 0" range="-1.1 1.1" frictionloss="0.2"/>
                 <geom class="visual" mesh="leg_r5_link"/>
-                <geom class="collision" size="0.05005 0.01725 0.00875" pos="0.01503 0 -0.0102" quat="0.707388 0.706825 0 0" type="box" />
-                <body name="leg_r_f1_link" pos="0.06 0 -0.007">
-                  <inertial pos="0 0 0" mass="0.01" diaginertia="1e-06 1e-06 1e-06"/>
-                  <geom class="foot1"/>
+                <!-- <geom class="collision" size="0.05005 0.01725 0.00875" pos="0.01503 0 -0.0102" quat="0.707388 0.706825 0 0" type="box" /> -->
+                <body name="leg_r_f1_link" pos="0.06 0 -0.005">
+                  <inertial pos="0 0 0" mass="0.05" diaginertia="1e-05 1e-05 1e-05"/>
                   <geom class="foot2"/>
                   <site name="leg_r_f1_site" pos="0 0 0"/>
                 </body>
-                <body name="leg_r_f2_link" pos="-0.03 0 -0.007">
-                  <inertial pos="0 0 0" mass="0.01" diaginertia="1e-06 1e-06 1e-06"/>
-                  <geom class="foot1"/>
+                <body name="leg_r_f2_link" pos="-0.03 0 -0.005">
+                  <inertial pos="0 0 0" mass="0.05" diaginertia="1e-05 1e-05 1e-05"/>
                   <geom class="foot2"/>
                   <site name="leg_r_f2_site" pos="0 0 0"/>
                 </body>
@@ -193,6 +189,11 @@
     <jointvel name="jvel_R3" joint="leg_r3_joint" />
     <jointvel name="jvel_R4" joint="leg_r4_joint" />
     <jointvel name="jvel_R5" joint="leg_r5_joint" />
+
+    <touch name="touch_L_f1" site="leg_l_f1_site"/>
+    <touch name="touch_L_f2" site="leg_l_f2_site"/>
+    <touch name="touch_R_f1" site="leg_r_f1_site"/>
+    <touch name="touch_R_f2" site="leg_r_f2_site"/>
 
   </sensor>
 
